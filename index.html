@@ -79,20 +79,18 @@
         .difficulty-button.selected {
             filter: brightness(85%); /* Darken the button to indicate selection */
         }
-        #warning {
+        #warning, #deviceWarning {
             position: fixed; /* Use fixed positioning for consistent overlay */
-            top: 20px;
+            top: 50%;
             left: 50%;
-            transform: translateX(-50%);
+            transform: translate(-50%, -50%);
             color: red;
-            font-size: 18px;
+            font-size: 24px;
             background-color: #fff;
-            padding: 10px;
+            padding: 20px;
             border: 1px solid red;
             border-radius: 5px;
             display: none; /* Hidden by default */
-            opacity: 0;
-            transition: opacity 0.5s ease-in-out; /* Smooth transition for opacity */
         }
         #timer {
             font-size: 24px;
@@ -105,25 +103,11 @@
             transition: opacity 0.5s ease;
             opacity: 0;
         }
-        #deviceWarning {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: red;
-            font-size: 24px;
-            background-color: #fff;
-            padding: 20px;
-            border: 1px solid red;
-            border-radius: 5px;
-            display: none; /* Hidden by default */
-        }
     </style>
 </head>
 <body>
 
-    <div id="deviceWarning">This game is only available on PCs. Please use a PC to play.</div>
-    
+    <div id="deviceWarning">You can enter only with a computer.</div>
     <h1>Try to catch little Gio lul C:</h1>
     <div id="warning">Specify a game difficulty and time!</div>
     <div class="difficulty-buttons">
