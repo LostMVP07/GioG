@@ -1,0 +1,458 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Fun Site</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .magic8ball {
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            width: 300px;
+            border-radius: 10px;
+        }
+        button {
+            padding: 5px 10px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Interactive JavaScript Fun</h1>
+
+    <div class="magic8ball">
+        <h2>Magic 8-Ball</h2>
+        <input type="text" id="questionInput" placeholder="Ask a yes/no question">
+        <button onclick="shakeMagic8Ball()">Ask the Magic 8-Ball</button>
+        <p id="magic8BallAnswer"></p>
+    </div>
+
+    <script>
+        function shakeMagic8Ball() {
+            const answers = [
+                "Yes.",
+                "No.",
+                "Maybe.",
+                "Definitely!",
+                "I don't think so.",
+                "Ask again later.",
+                "Absolutely not.",
+                "It's possible.",
+                "I'm not sure.",
+                "Try again."
+            ];
+
+            const randomIndex = Math.floor(Math.random() * answers.length);
+            const answer = answers[randomIndex];
+
+            document.getElementById('magic8BallAnswer').textContent = answer;
+        }
+    </script>
+
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Fun Site</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .colorful-clicker {
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            width: 300px;
+            height: 200px;
+            border-radius: 10px;
+            background-color: #ffffff;
+            line-height: 200px;
+            font-size: 24px;
+            color: #000;
+            cursor: pointer;
+            user-select: none; 
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Interactive JavaScript Fun</h1>
+
+    
+    <div class="colorful-clicker" onclick="changeColor()">
+        Click me!
+        <p id="colorCode"></p>
+    </div>
+
+    <script>
+        function changeColor() {
+            const randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+            document.querySelector('.colorful-clicker').style.backgroundColor = randomColor;
+            document.getElementById('colorCode').textContent = 'Color: ' + randomColor;
+        }
+    </script>
+
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Fun Site</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .joke-generator {
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            width: 300px;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+        button {
+            padding: 5px 10px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        .joke {
+            font-size: 18px;
+            color: #555;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Interactive JavaScript Fun</h1>
+
+    
+    <div class="joke-generator">
+        <h2>Random Joke</h2>
+        <button onclick="generateJoke()">Get a Joke</button>
+        <p class="joke" id="jokeDisplay">Click the button to get a joke!</p>
+    </div>
+
+    <script>
+        
+        const jokes = [
+            "Why don’t scientists trust atoms? Because they make up everything!",
+            "Why did the scarecrow win an award? Because he was outstanding in his field!",
+            "Why don’t skeletons fight each other? They don’t have the guts.",
+            "What do you call fake spaghetti? An impasta!",
+            "Why did the bicycle fall over? It was two-tired.",
+            "What do you call cheese that isn't yours? Nacho cheese!",
+            "What do you get when you cross a snowman with a vampire? Frostbite!",
+            "Why do cows wear bells? Because their horns don’t work!",
+            "Why did the math book look sad? Because it had too many problems."
+        ];
+
+       
+        function generateJoke() {
+            const randomIndex = Math.floor(Math.random() * jokes.length);
+            const joke = jokes[randomIndex];
+            document.getElementById('jokeDisplay').textContent = joke;
+        }
+    </script>
+
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catch Gio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background-color: #f0f0f0;
+            position: relative; /* Make sure the warning is positioned relative to the body */
+        }
+        .game-container {
+            display: grid;
+            grid-template-columns: repeat(5, 150px); /* 5 columns now */
+            grid-template-rows: repeat(3, 150px); /* 3 rows */
+            gap: 15px;
+            margin: 0 auto;
+            width: 795px; /* Adjusted width for 5 columns */
+        }
+        .hole {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            background-color: #a0522d;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .mole {
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            bottom: -120px;
+            left: 15px;
+            transition: bottom 0.2s;
+            cursor: pointer;
+            border-radius: 50%; /* Makes the mole container round */
+            overflow: hidden; /* Ensures the image fits within the round container */
+        }
+        .mole img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures the image covers the mole container without distortion */
+            user-select: none; /* Prevents the image from being selected */
+        }
+        #score {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        #startButton, .difficulty-button, .time-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        .difficulty-buttons, .time-buttons {
+            margin-bottom: 20px;
+        }
+        .difficulty-button {
+            border: none;
+            color: #fff;
+            border-radius: 5px;
+        }
+        .easy {
+            background-color: lightgreen;
+        }
+        .medium {
+            background-color: yellow;
+            color: black;
+        }
+        .hard {
+            background-color: red;
+        }
+        .impossible {
+            background-color: darkred;
+        }
+        .difficulty-button.selected {
+            filter: brightness(85%); /* Darken the button to indicate selection */
+        }
+        #warning {
+            position: fixed; /* Use fixed positioning for consistent overlay */
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: red;
+            font-size: 18px;
+            background-color: #fff;
+            padding: 10px;
+            border: 1px solid red;
+            border-radius: 5px;
+            display: none; /* Hidden by default */
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out; /* Smooth transition for opacity */
+        }
+        #timer {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        #finalScore {
+            display: none;
+            font-size: 24px;
+            margin-top: 20px;
+            transition: opacity 0.5s ease;
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Try to catch little Gio lul C:</h1>
+    <div id="warning">Specify a game difficulty and time!</div>
+    <div class="difficulty-buttons">
+        <button class="difficulty-button easy" data-speed="1000">Easy😊</button>
+        <button class="difficulty-button medium" data-speed="750">Medium🙂</button>
+        <button class="difficulty-button hard" data-speed="500">Hard😲</button>
+        <button class="difficulty-button impossible" data-speed="250">Impossible💀</button>
+    </div>
+    <div class="time-buttons">
+        <button class="time-button" data-time="15">15 Seconds</button>
+        <button class="time-button" data-time="30">30 Seconds</button>
+        <button class="time-button" data-time="45">45 Seconds</button>
+    </div>
+    <div id="score">Score: 0/0</div>
+    <div id="timer">Time left: 15s</div>
+    <button id="startButton">Start Game</button>
+    <div class="game-container" id="gameContainer">
+        <!-- 15 holes here -->
+        <div class="hole" id="hole1"></div>
+        <div class="hole" id="hole2"></div>
+        <div class="hole" id="hole3"></div>
+        <div class="hole" id="hole4"></div>
+        <div class="hole" id="hole5"></div>
+        <div class="hole" id="hole6"></div>
+        <div class="hole" id="hole7"></div>
+        <div class="hole" id="hole8"></div>
+        <div class="hole" id="hole9"></div>
+        <div class="hole" id="hole10"></div>
+        <div class="hole" id="hole11"></div>
+        <div class="hole" id="hole12"></div>
+        <div class="hole" id="hole13"></div>
+        <div class="hole" id="hole14"></div>
+        <div class="hole" id="hole15"></div>
+    </div>
+    <div id="finalScore"></div>
+
+    <script>
+        const gameContainer = document.getElementById('gameContainer');
+        const scoreDisplay = document.getElementById('score');
+        const timerDisplay = document.getElementById('timer');
+        const startButton = document.getElementById('startButton');
+        const difficultyButtons = document.querySelectorAll('.difficulty-button');
+        const timeButtons = document.querySelectorAll('.time-button');
+        const warning = document.getElementById('warning');
+        const finalScoreDisplay = document.getElementById('finalScore');
+
+        let score = 0;
+        let missed = 0;
+        let moles = [];
+        let activeMole = null;
+        let gameInterval;
+        let popUpInterval = null;
+        let isGameRunning = false;
+        let difficultySelected = false;
+        let timeSelected = false;
+        let timer;
+        let countdown;
+
+        function createMoles() {
+            const holes = document.querySelectorAll('.hole');
+            holes.forEach(hole => {
+                const mole = document.createElement('div');
+                mole.className = 'mole';
+                
+                const img = document.createElement('img');
+                img.src = 'pic/gio.gif';
+                mole.appendChild(img);
+
+                mole.addEventListener('click', () => {
+                    if (mole === activeMole) {
+                        score++;
+                        scoreDisplay.textContent = `Score: ${score}/${missed + score}`;
+                        mole.style.bottom = '-120px';
+                        activeMole = null;
+                    }
+                });
+
+                hole.appendChild(mole);
+                moles.push(mole);
+            });
+        }
+
+        function showMole() {
+            const randomIndex = Math.floor(Math.random() * moles.length);
+            const mole = moles[randomIndex];
+            if (activeMole) {
+                activeMole.style.bottom = '-120px';
+            }
+            mole.style.bottom = '15px';
+            activeMole = mole;
+        }
+
+        function startGame() {
+    if (!difficultySelected || !timeSelected) {
+        warning.style.display = 'block'; // Show warning
+        warning.style.opacity = 1; // Make warning visible
+        setTimeout(() => {
+            warning.style.opacity = 0; // Fade out warning
+            setTimeout(() => {
+                warning.style.display = 'none'; // Hide warning after fade out
+            }, 500); // Match the transition duration
+        }, 2000); // Keep the warning visible for 2 seconds
+        return;
+    }
+    warning.style.opacity = 0; // Hide warning with transition
+    setTimeout(() => {
+        warning.style.display = 'none'; // Hide element after fade-out transition
+    }, 500); // Match the transition duration
+    if (isGameRunning) return; // Prevent starting multiple games
+    isGameRunning = true;
+    score = 0;
+    missed = 0;
+    scoreDisplay.textContent = `Score: ${score}/${missed + score}`;
+    finalScoreDisplay.style.display = 'none'; // Hide final score initially
+    finalScoreDisplay.style.opacity = 0; // Ensure opacity is zero before showing
+    timerDisplay.textContent = `Time left: ${countdown}s`; // Reset timer display
+    moles.forEach(mole => mole.style.bottom = '-120px');
+    gameInterval = setInterval(showMole, popUpInterval);
+    timer = setInterval(() => {
+        countdown--;
+        timerDisplay.textContent = `Time left: ${countdown}s`;
+        if (countdown <= 0) {
+            clearInterval(timer);
+            clearInterval(gameInterval);
+            isGameRunning = false;
+            finalScoreDisplay.textContent = `Your final score is ${score}/${missed + score}`;
+            finalScoreDisplay.style.display = 'block';
+            finalScoreDisplay.style.opacity = 1; // Show final score with transition
+        }
+    }, 1000);
+}
+
+        function stopGame() {
+            clearInterval(gameInterval);
+            clearInterval(timer);
+            isGameRunning = false;
+        }
+
+        difficultyButtons.forEach(button => {
+            button.addEventListener('click', (event) => {
+                if (isGameRunning) {
+                    stopGame(); // Stop current game before changing difficulty
+                }
+                // Remove 'selected' class from all difficulty buttons
+                difficultyButtons.forEach(btn => btn.classList.remove('selected'));
+                // Add 'selected' class to the clicked button
+                event.target.classList.add('selected');
+                popUpInterval = parseInt(event.target.getAttribute('data-speed'), 10);
+                difficultySelected = true; // Mark difficulty as selected
+            });
+        });
+
+        timeButtons.forEach(button => {
+            button.addEventListener('click', (event) => {
+                timeButtons.forEach(btn => btn.classList.remove('selected'));
+                event.target.classList.add('selected');
+                countdown = parseInt(event.target.getAttribute('data-time'), 10);
+                timeSelected = true; // Mark time as selected
+            });
+        });
+
+        startButton.addEventListener('click', startGame);
+
+        createMoles();
+    </script>
+
+</body>
+</html>
+
